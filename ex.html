@@ -4,6 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript">  
 $(document).ready(function(){
+	$("#al").bind("click",goaj)
     $.ajax({
 		type:GET,
 		success:getpage,
@@ -12,6 +13,11 @@ $(document).ready(function(){
 			}
 	});
 });
+function goaj(src){
+	
+	alert(src);
+	
+}
 function getpage(serverPage){
 				//var obj=document.body;
 				//obj.open("GET",serverPage);	
@@ -30,9 +36,9 @@ function getpage(serverPage){
 <body>  
     <div align="center">  
         <h1>Ajax示範</h1>  
-    <a href="AjaxPage1.html" onClick="getpage('AjaxPage1.html'); return false;">示範 1</a>    
+    <a href="AjaxPage1.html" id="a1" name="AjaxPage1.html" onClick="goaj(this.name)">示範 1</a>    
     <a href="AjaxPage2.html" onClick="getpage('AjaxPage2.html'); return false;">示範 2</a>    
-    //這裡就是將要置換page1～4.html的位置。   
+   
         <div id="ajax"></div>  
     </div>  
 </body>  
