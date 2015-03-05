@@ -5,17 +5,20 @@
 <script type="text/javascript">  
 $(document).ready(function(){
 	$("#al").bind("click",goaj)
-    $.ajax({
-		type:GET,
-		success:getpage,
-		error: function(data){
-			alert("no");
-			}
-	});
 });
 function goaj(src){
 	
 	alert(src);
+	    $.ajax({
+		type:GET,
+		datatype:json,xml,html
+		date :datastring;
+		success:getpage,
+		error: function(data){
+			alert("no");
+			}
+	    });
+
 	
 }
 function getpage(serverPage){
