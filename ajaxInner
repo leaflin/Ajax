@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>內部資料</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(function() {
+	
+		$.ajax({
+			type:"GET",
+			url:"a.json",
+			dataType: "json" ,
+			success: ShowData,
+			error: function(data){
+				alert("系統錯誤！");
+			}
+		});	
+});
+function ShowData(data){
+	console.log("yes")
+	$("#answerOR h1").append(console.log("yes"));
+	for(i=0;i<data.length;i++){
+	console.log(data[i]["Name"]);
+	$("#txt").append(data[i]["Name"]+"</br>");
+	}
+	$("#HOW h1").append(data.length);
+}
+</script>
+</head>
+<body>
+
+<h1>內部資料</h1>
+<p>$.ajax()方法做</p>
+<div id="HOW"><h1>筆數:</h1></div>
+<div id="answerOR"><h1>回應;</h1></div>
+<p id="txt"></p>
+</body>
+</html>
