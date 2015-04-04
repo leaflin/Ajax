@@ -1,0 +1,16 @@
+var nytimeUrl='http://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&page=2&sort=oldest&api-key=OOOO
+$.getJSON(nytimeUrl,function aa(data){
+	var total_len=data.response.docs.length;
+	for(i=0;i<total_len;i++){
+		//console.log(data.response.docs[i]);
+		//$("#link").attr('href',data.response.docs[i].web_url)
+		//$("#txt").append(data.response.docs[i]["headline"].main+"<br/>");
+		var aa=data.response.docs[i]["headline"].main+"<br/>";
+		var a=data.response.docs[i].web_url;
+	    $("#b").append(aa+"<p><a href='"+a+"' target='_blank'>readmore</a></p>");
+		//$("#link").attr('href',data.response.docs[i].web_url);
+		}
+	
+	
+	
+})
